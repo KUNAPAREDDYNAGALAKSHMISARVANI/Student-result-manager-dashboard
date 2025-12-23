@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Result Manager</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Student Manager</h2>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('add')">Add / Update Student</button>
+    <button onclick="showSection('view')">View Student</button>
+    <button onclick="showSection('timetable')">Timetable</button>
+</div>
+
+<div class="main">
+    <div id="home" class="section" style="display:block;">
+        <h1>Welcome to Student Result Management</h1>
+        <p>Use the sidebar to manage student marks, view details, and generate study timetables.</p>
+    </div>
+
+    <div id="add" class="section">
+        <h2>Add / Update Student</h2>
+        <input type="text" id="roll" placeholder="Roll Number"><br>
+        <input type="text" id="name" placeholder="Student Name"><br>
+        <input type="number" id="subjectCount" placeholder="Number of Subjects"><br>
+        <button onclick="createSubjects()">Add Subjects</button>
+        <div id="subjectsContainer"></div>
+        <button onclick="saveStudent()">Save Student</button>
+    </div>
+
+    <div id="view" class="section">
+        <h2>View Student</h2>
+        <input type="text" id="searchRoll" placeholder="Roll Number"><br>
+        <button onclick="viewStudent()">Search</button>
+        <div id="studentDetails"></div>
+    </div>
+
+    <div id="timetable" class="section">
+        <h2>Study Timetable (Based on Marks)</h2>
+        <div id="timetableDisplay"></div>
+        <button onclick="generateTimetable()">Generate Timetable for All Students</button>
+    </div>
+</div>
+
+</body>
+</html>
